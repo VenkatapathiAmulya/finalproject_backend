@@ -105,7 +105,7 @@ app.delete('/delete/:id',jwtMW, (req, res) => {
      let userdata;
      console.log("***************** entered post method of /register")
     let data = {firstName: req.body.firstName, lastName: req.body.lastName, username: req.body.username,password: req.body.password,id: req.body.id}
-    mongoose.connect('mongodb://127.0.0.1:27017/budget_database', {
+    mongoose.connect('mongodb+srv://amulya:amulya@cluster0.qtzvq.mongodb.net/budget_database?retryWrites=true&w=majority', {
         useNewUrlParser:true,
         useCreateIndex : true,
         useUnifiedTopology: true
@@ -195,7 +195,7 @@ app.post('/login',(req,res)=>{
     const username = req.body.username;
     const password = req.body.password;
 
-    mongoose.connect('mongodb://127.0.0.1:27017/budget_database', {
+    mongoose.connect('mongodb+srv://amulya:amulya@cluster0.qtzvq.mongodb.net/budget_database?retryWrites=true&w=majority', {
         useNewUrlParser:true,
         useCreateIndex : true,
         useUnifiedTopology: true
