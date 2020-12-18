@@ -101,7 +101,7 @@ app.delete('/delete/:id',jwtMW, (req, res) => {
         })
     })
  });
- app.post('/register',jwtMW, (req, res) => {
+ app.post('/register', (req, res) => {
      let userdata;
      console.log("***************** entered post method of /register")
     let data = {firstName: req.body.firstName, lastName: req.body.lastName, username: req.body.username,password: req.body.password,id: req.body.id}
