@@ -37,7 +37,7 @@ app.use(cors());
 
 app.post('/getbudgetwithuser',jwtMW, (req, res) => {
     console.log("************ entered getbudgetwithuser method",req.body.username)
-    mongoose.connect('mongodb://127.0.0.1:27017/budget_database', {
+    mongoose.connect('mongodb+srv://amulya:amulya@cluster0.qtzvq.mongodb.net/budget_database?retryWrites=true&w=majority', {
      useNewUrlParser:true,
      useCreateIndex : true,
      useUnifiedTopology: true
@@ -56,7 +56,7 @@ app.post('/getbudgetwithuser',jwtMW, (req, res) => {
     console.log("***************** entered post method of /update")
    let data = {username: req.body.params.username, title: req.body.params.title, budget: req.body.params.budget,color: req.body.params.color,id: req.body.id}
    console.log("^^^^^^^^^^^^^^^^^^^ data",data);
-   mongoose.connect('mongodb://127.0.0.1:27017/budget_database', {
+   mongoose.connect('mongodb+srv://amulya:amulya@cluster0.qtzvq.mongodb.net/budget_database?retryWrites=true&w=majority', {
        useNewUrlParser:true,
        useCreateIndex : true,
        useUnifiedTopology: true
@@ -74,7 +74,7 @@ app.delete('/delete/:id',jwtMW, (req, res) => {
 
     console.log("^^^^^^^^^^^^^^^^^^ ",req.params)
     console.log("***************** entered post method of /delete")
-   mongoose.connect('mongodb://127.0.0.1:27017/budget_database', {
+   mongoose.connect('mongodb+srv://amulya:amulya@cluster0.qtzvq.mongodb.net/budget_database?retryWrites=true&w=majority', {
        useNewUrlParser:true,
        useCreateIndex : true,
        useUnifiedTopology: true
@@ -89,7 +89,7 @@ app.delete('/delete/:id',jwtMW, (req, res) => {
  app.post('/getbudgetwithid',jwtMW, (req, res) => {
     const id = req.body.id;
     console.log("********** id",id);
-    mongoose.connect('mongodb://127.0.0.1:27017/budget_database', {
+    mongoose.connect('mongodb+srv://amulya:amulya@cluster0.qtzvq.mongodb.net/budget_database?retryWrites=true&w=majority', {
      useNewUrlParser:true,
      useCreateIndex : true,
      useUnifiedTopology: true
@@ -149,7 +149,7 @@ app.post('/add', jwtMW,(req, res) => {
     let userbudgetdata;
     console.log("***************** entered post method of /add")
    let data = {username: req.body.username, title: req.body.title, budget: req.body.budget,color: req.body.color,id: req.body.id}
-   mongoose.connect('mongodb://127.0.0.1:27017/budget_database', {
+   mongoose.connect('mongodb+srv://amulya:amulya@cluster0.qtzvq.mongodb.net/budget_database?retryWrites=true&w=majority', {
        useNewUrlParser:true,
        useCreateIndex : true,
        useUnifiedTopology: true
@@ -232,7 +232,7 @@ app.use(function (err,req,res,next){
 
  app.post('/budget',jwtMW, (req, res) => {
     let data = {id: req.body.id, title: req.body.title, budget: req.body.budget, color: req.body.color}
-    mongoose.connect('mongodb://127.0.0.1:27017/budget_database', {
+    mongoose.connect('mongodb+srv://amulya:amulya@cluster0.qtzvq.mongodb.net/budget_database?retryWrites=true&w=majority', {
         useNewUrlParser:true,
         useCreateIndex : true,
         useUnifiedTopology: true
