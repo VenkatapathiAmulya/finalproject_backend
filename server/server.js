@@ -34,6 +34,7 @@ app.use(bodyParser.json());
 app.use('/',express.static('public'));
 
 app.use(cors());
+app.use(express.static(__dirname + '/build/personal-budget'));
 
 app.post('/getbudgetwithuser',jwtMW, (req, res) => {
     console.log("************ entered getbudgetwithuser method",req.body.username)
@@ -250,6 +251,7 @@ app.use(function (err,req,res,next){
        })
 })
 
+app.use('/*', (req, res) => res.sendFile(path.join(__dirname, 'build/personal-budget','index.html')));
 
 app.listen(port,() => {
     console.log('API served at http://localhost:'+ port)
