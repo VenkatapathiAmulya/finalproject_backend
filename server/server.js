@@ -17,7 +17,8 @@ app.use((req,res,next)=>{
 
 
 
-const port = 3000;
+// const port = 3000;
+const port = process.env.PORT || 3000;
 
 const secretKey = 'My super secret key';
 const jwtMW = exjwt({
@@ -256,3 +257,4 @@ app.use('/*', (req, res) => res.sendFile(path.join(__dirname, 'build/personal-bu
 app.listen(port,() => {
     console.log('API served at http://localhost:'+ port)
 });
+
